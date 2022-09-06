@@ -1,3 +1,4 @@
+
 var tablaClientes = null; //para aumentar el scope
 $(document).ready(function () {
     tablaSoporte = $('#soporte').DataTable({
@@ -28,7 +29,7 @@ $(document).ready(function () {
     });
 
 
-    // editar("#clientes tbody", tablaClientes);
+    new $.fn.dataTable.FixedHeader(tablaSoporte);
 });
 
 

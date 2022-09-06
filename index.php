@@ -1,11 +1,12 @@
 <?php
-
-    include_once 'vista/soporte/soporteV.php';
-    include_once 'vista/header.php';
-    include_once 'vista/footer.php';
-
-    /*include_once 'view/cliente/cliente.php';
-    include_once 'view/header.php';
-    include_once 'view/footer.php';*/
-
+    date_default_timezone_set('America/Asuncion');
+    include 'controlador/soporteControlador.php';
+    $controller = new soporteControlador();
+    
+   if(!isset($_REQUEST['c'])){
+    $controller->index();
+   }else{
+    $action = $_REQUEST['c'];
+    call_user_func(array($controller, $action));
+   }
 ?>
